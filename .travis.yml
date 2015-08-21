@@ -10,4 +10,9 @@ matrix:
     - rvm: jruby-1.7.20
       before_install: gem install bundler --no-ri --no-rdoc
       before_script: export JRUBY_OPTS="$JRUBY_OPTS --2.0"
+      env: JRUBY_OPTS="$JRUBY_OPTS -Xcli.debug=true --debug"
+    - rvm: jruby-9.0.0.0
+      before_install: gem install bundler --no-ri --no-rdoc
+      env: JRUBY_OPTS="$JRUBY_OPTS -Xcli.debug=true --debug"
+  allow_failures: jruby-9.0.0.0
   fast_finish: true
